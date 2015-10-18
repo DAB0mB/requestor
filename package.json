@@ -13,11 +13,26 @@
     "request": "~2.65.0"
   },
   "devDependencies": {
+    "browserify": "~11.2.0",
+    "browserify-shim": "~3.8.10",
     "chai": "~3.3.0",
+    "exorcist": "~0.4.0",
     "mocha": "~2.3.0",
     "nock": "~2.15.0",
     "sinon": "~1.17.0",
-    "sinon-chai": "~2.8.0"
+    "sinon-chai": "~2.8.0",
+    "uglifyjs": "~2.4.10"
+  },
+  "browserify-shim": {
+    "bluebird": "global:Promise",
+    "boom": "global:Boom",
+    "jquery": "global:$",
+    "request": "global:Request"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
   },
   "engines": {
     "node": "~0.10.0"
